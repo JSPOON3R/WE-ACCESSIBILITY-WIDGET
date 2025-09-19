@@ -1,0 +1,79 @@
+{
+  "manifest_version": 3,
+  "name": "Accessibility Widget Extension",
+  "version": "1.0",
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+    "content_scripts": [
+  {
+    "matches": ["<all_urls>"],
+    "js": ["content.js"]
+  }
+  ],
+    "background": {
+    "service_worker": "background.js"
+  },
+  "env": [
+	    {
+      "key": "widgetColor1",
+      "value": "black",
+      "description": "Enter a CSS color for the widget background."
+    },
+	    {
+      "key": "widgetColor2",
+      "value": "white",
+      "description": "Enter a CSS color for the widget icon."
+    },
+    {
+      "key": "invertColors",
+      "value": "false",
+      "description": "Invert all page colors. Options: 'true' or 'false'."
+    },
+    {
+      "key": "grayscale",
+      "value": "false",
+      "description": "Apply grayscale filter to the page. Options: 'true' or 'false'."
+    },
+    {
+      "key": "saturation",
+      "value": "none",
+      "description": "Color saturation adjustment. Options: 'none', 'low', or 'high'."
+    },
+    {
+      "key": "underlineStyle",
+      "value": "none",
+      "description": "Link highlight style. Options: 'none', 'style0', 'style1', 'style2'."
+    },
+    {
+      "key": "fontSize",
+      "value": "default",
+      "description": "Base font size for text. Options: '' (default), '1.3rem', '1.5rem', '1.8rem'."
+    },
+    {
+      "key": "contrast",
+      "value": "none",
+      "description": "Contrast adjustment level. Options: 'none', 'low', 'medium', or 'high'."
+    },
+    {
+      "key": "hideImages",
+      "value": "false",
+      "description": "Hide all images on the page. Options: 'true' or 'false'."
+    },
+    {
+      "key": "hideVideo",
+      "value": "false",
+      "description": "Hide all video elements on the page. Options: 'true' or 'false'."
+    },
+    {
+      "key": "cursorMode",
+      "value": "none",
+      "description": "Custom cursor mode. Options: 'none', 'cursor0', 'cursor1', 'cursor2'."
+    },
+    {
+      "key": "position",
+      "value": "right",
+      "description": "Position of the accessibility widget. Options: 'left', 'top', 'bottom', or 'right'."
+    }
+  ]
+}
